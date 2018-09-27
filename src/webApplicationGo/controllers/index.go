@@ -9,9 +9,12 @@ type IndexController struct {
 }
 
 func (c *IndexController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "henrickcarneva@gmail.com"
-	c.Data["DocGo"] = "golang.org"
-	c.TplName = "site.tpl"
+	c.Layout = "acceuil.tpl"
+	c.TplName = "index.html"
 
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["HtmlHead"] = "head.html"
+	c.LayoutSections["Header"] = "header.html"
+	c.LayoutSections["Section"] = "section.html"
+	c.LayoutSections["Footer"] = "footer.html"
 }
