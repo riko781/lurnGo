@@ -8,14 +8,19 @@ type OperationController struct {
 	beego.Controller
 }
 
-func (c *OperationController) Get() {
-	var x = 42
-	var y = 30
+var (
+	x uint16 = 42
+	y uint16 = 30
 
-	var resultAddition = x + y
-	var resultMultiplication = x * y
-	var resultDivision = x / y
-	var resultSoustraction = (x - y)
+	resultAddition       uint16  = x + y
+	resultMultiplication uint16  = x * y
+	resultDivision       float32 = float32(x) / float32(y)
+	resultSoustraction   uint16  = x - y
+)
+
+func (c *OperationController) Get() {
+	c.Layout = "operation.tpl"
+	c.TplName = "index.html"
 
 	c.Data["x"] = x
 	c.Data["y"] = y
@@ -26,5 +31,10 @@ func (c *OperationController) Get() {
 	c.Data["Website"] = "beego.me"
 	c.Data["Email"] = "henrickcarneva@gmail.com"
 	c.Data["DocGo"] = "golang.org"
-	c.TplName = "site.tpl"
+
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["HtmlHead"] = "head.html"
+	c.LayoutSections["Header"] = "header.html"
+	c.LayoutSections["Section"] = "section.html"
+	c.LayoutSections["Footer"] = "footer.html"
 }
