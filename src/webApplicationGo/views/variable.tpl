@@ -55,7 +55,7 @@
                         Retourn : {{.i}} <br>
                     </p>
                     <p>
-                        j = [2]float32{1.0, 2.0} <br>
+                        j = [2]float32{1.1, 2.1} <br>
                         Retourn : {{.j}} <br>
                     </p>
                 </div>

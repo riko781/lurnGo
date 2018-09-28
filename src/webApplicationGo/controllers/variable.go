@@ -23,7 +23,7 @@ var (
 	//array
 	h = [2]int8{1, 2}
 	i = [2]string{"Hello", "World"}
-	j = [2]float32{1.0, 2.0}
+	j = [2]float32{1.1, 2.1}
 )
 
 func (v *VariableController) Get() {
