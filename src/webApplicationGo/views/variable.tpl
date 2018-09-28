@@ -44,6 +44,21 @@
                         Retourn : {{.g}} <br>
                     </p>
                 </div>
+                <div>
+                    <h3>Array types</h3>
+                    <p>
+                       var h = [2]int8{1, 2}<br>
+                        Retourn : {{.h}} <br>
+                    </p>
+                    <p>
+                        var i = [2]string{"Hello", "World"}<br>
+                        Retourn : {{.i}} <br>
+                    </p>
+                    <p>
+                        j = [2]float32{1.0, 2.0} <br>
+                        Retourn : {{.j}} <br>
+                    </p>
+                </div>
             </div>
         </article>
         {{.Footer}}

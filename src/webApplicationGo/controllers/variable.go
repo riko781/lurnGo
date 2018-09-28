@@ -7,13 +7,23 @@ type VariableController struct {
 }
 
 var (
-	a bool   = true
-	b bool   = false
+	//booléan
+	a bool = true
+	b bool = false
+
+	//string
 	c string = "Je suis un string"
-	d uint8  = 1
-	e int8   = -1
-	f        = float32(-1.22)
-	g        = float32(1.22)
+
+	//integer
+	d uint8 = 1
+	e int8  = -1
+	f       = float32(-1.22)
+	g       = float32(1.22)
+
+	//array
+	h = [2]int8{1, 2}
+	i = [2]string{"Hello", "World"}
+	j = [2]float32{1.0, 2.0}
 )
 
 func (v *VariableController) Get() {
@@ -27,6 +37,9 @@ func (v *VariableController) Get() {
 	v.Data["e"] = e
 	v.Data["f"] = f
 	v.Data["g"] = g
+	v.Data["h"] = h
+	v.Data["i"] = i
+	v.Data["j"] = j
 
 	v.LayoutSections = make(map[string]string)
 	v.LayoutSections["HtmlHead"] = "head.html"
