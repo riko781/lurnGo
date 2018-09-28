@@ -21,7 +21,7 @@ var (
 func (c *OperationController) Get() {
 	c.Layout = "operation.tpl"
 	c.TplName = "index.html"
-	
+
 	c.LayoutSections = make(map[string]string)
 	c.LayoutSections["HtmlHead"] = "head.html"
 	c.LayoutSections["Header"] = "header.html"
@@ -34,9 +34,4 @@ func (c *OperationController) Get() {
 	c.Data["resultMultiplication"] = resultMultiplication
 	c.Data["resultDivision"] = resultDivision
 	c.Data["resultSoustraction"] = resultSoustraction
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "henrickcarneva@gmail.com"
-	c.Data["DocGo"] = "golang.org"
-
-	
 }
