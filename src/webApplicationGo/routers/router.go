@@ -11,4 +11,5 @@ func init() {
 	beego.Router("/index", &controllers.IndexController{})
 	beego.Router("/operation", &controllers.OperationController{})
 	beego.Router("/variable", &controllers.VariableController{})
+	beego.Router("/condition", &controllers.ConditionController{})
 }
