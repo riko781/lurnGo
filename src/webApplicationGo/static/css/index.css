@@ -10,3 +10,5 @@ a,.linkSiteGo{margin-top:100px;display: inline-block; text-decoration: none;}
 #variable{display: flex;width:100%}
 #condition{display:flex;}
 #condition div{width:200px; border:1px solid black;text-align: center;margin-right: 2px;}
+.condition{display:flex;}
+#if{margin-right: 200px;}

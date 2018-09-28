@@ -1,6 +1,10 @@
 package controllers
 
-import "github.com/astaxie/beego"
+import (
+	"runtime"
+
+	"github.com/astaxie/beego"
+)
 
 type ConditionController struct {
 	beego.Controller
@@ -18,6 +22,7 @@ func (c *ConditionController) Get() {
 	c.Data["x"] = x
 	c.Data["y"] = y
 
+	//if condition
 	if x < y {
 		c.Data["a"] = a
 	} else {
@@ -28,5 +33,21 @@ func (c *ConditionController) Get() {
 		c.Data["a"] = a
 	} else {
 		c.Data["b"] = b
+	}
+
+	if x := x + y; x > y {
+		c.Data["v"] = a
+	} else {
+		c.Data["v"] = b
+	}
+
+	//switch condition
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		c.Data["os"] = "OS X."
+	case "linux":
+		c.Data["os"] = "Linux."
+	default:
+		c.Data["os"] = "Other OS"
 	}
 }
