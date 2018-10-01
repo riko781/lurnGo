@@ -7,9 +7,10 @@ import (
 )
 
 func init() {
-	beego.Router("/", &controllers.MainController{})
-	beego.Router("/index", &controllers.IndexController{})
+	beego.Router("/beego", &controllers.MainController{})
+	beego.Router("/", &controllers.IndexController{})
 	beego.Router("/operation", &controllers.OperationController{})
 	beego.Router("/variable", &controllers.VariableController{})
 	beego.Router("/condition", &controllers.ConditionController{})
+	beego.Router("/boucle", &controllers.BoucleController{})
 }
