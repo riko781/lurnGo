@@ -1,29 +1,36 @@
-package sql
+package sqlQuery
 
+import (
+	"database/sql"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+/*
 import (
 	"database/sql"
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
 )
-
-func connectDb() (sqlConnect *sql.DB) {
+*/
+func ConnectDb() (sqlConnect *sql.DB) {
 	var server *sql.DB
 	var err error
 	server, err = sql.Open("mysql", "inovatic:sysiphe@tcp(192.168.1.147)/production")
 	if err != nil {
-		log.Fatal(err)
+		panic(err.Error())
 	}
 	return server
 }
 
-func queryRow(request string, server *sql.DB) *sql.Row {
+func QueryRow(request string, server *sql.DB) *sql.Row {
 
 	row := server.QueryRow(request)
 	return row
 }
 
-func query(request string, server *sql.DB) (rows *sql.Rows) {
+func Query(request string, server *sql.DB) (rows *sql.Rows) {
 	rows, err := server.Query(request)
 
 	if err != nil {
@@ -31,12 +38,6 @@ func query(request string, server *sql.DB) (rows *sql.Rows) {
 	}
 	return rows
 }
-
-var (
-	request string
-	rame    string
-	id      uint64
-)
 
 /*
 func main() {
